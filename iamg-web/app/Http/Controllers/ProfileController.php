@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Address;
 
-class HomeController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $addresses = Address::all();
+        return view('profile.profile', compact('addresses'));
     }
 }
